@@ -1,0 +1,12 @@
+0x00. Python - Hello, World
+- 0-run - 0. Run Python file - Shell script that runs a Python script
+- 1-run_inline - 1. Run inline - Shell script that runs Python code
+- 2-print.py - 2. Hello, print - Python script that prints exactly...
+- 3-print_number.py - print integer stored in the variable number, followed by Battery street
+- 4-print_float.py - print the float stored in the variable number with a precision of 2 digits
+- 5-print_string.py - print 3 times a string stored in the variable str, followed by its first 9 characters.
+- 6-concat.py - print Welcome to Holberton School!
+- 7-edges.py - Copy - Cut - Paste
+- 8-concat_edges.py - Create a new sentence
+- 9-easter_egg.py - Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
+- 10-check_cycle.c, lists.h -  Linked list cycle
