@@ -6,7 +6,7 @@ class Square:
     """this is class Square"""
     def __init__(self, size=0, position=(0, 0)):
         """
-            Arg:
+            Args:
                 size: size of the square
                 position: tuple, square's position
         """
@@ -47,9 +47,7 @@ class Square:
     @position.setter
     def position(self, value):
         """sets position's value"""
-        if type(value) is not tuple:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if self.position[0] < 0 or self.position[1] < 0:
+        if (type(value) is not tuple or len(value) != 2 or type(value[0]) != int or type(value[1]) != int or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
