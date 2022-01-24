@@ -57,22 +57,22 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        return self.__height * self.__width
+        return self.height * self.width
 
     def perimeter(self):
         if self.__height == 0 or self.__width == 0:
             return 0
-        return (self.__height * 2) + (self.__width * 2)
+        return (self.height * 2) + (self.width * 2)
 
     def __str__(self):
-        if self.__height == 0 or self.__width == 0:
+        if self.height == 0 or self.width == 0:
             return str('')
 
         new = ''
-        for i in range(self.__height):
-            for j in range(self.__width):
+        for i in range(self.height):
+            for j in range(self.width):
                 new = new + str(self.print_symbol)
-            if i < (self.__height - 1):
+            if i < (self.height - 1):
                 new = new + '\n'
         return new
 
