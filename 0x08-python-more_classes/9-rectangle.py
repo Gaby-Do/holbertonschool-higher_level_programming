@@ -18,6 +18,14 @@ class Rectangle:
             width: int >= 0, width of the rectangle
             Height: int >= 0, height of the rectangle
         """
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         self.height = height
         self.width = width
         type(self).number_of_instances += 1
