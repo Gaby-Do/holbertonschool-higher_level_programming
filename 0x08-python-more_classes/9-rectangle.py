@@ -60,7 +60,7 @@ class Rectangle:
         return self.height * self.width
 
     def perimeter(self):
-        if self.__height == 0 or self.__width == 0:
+        if self.height == 0 or self.width == 0:
             return 0
         return (self.height * 2) + (self.width * 2)
 
@@ -77,8 +77,8 @@ class Rectangle:
         return new
 
     def __repr__(self):
-        return (type(self).__name__ + "(" + str(self.__width) +
-                ", " + str(self.__height) + ")")
+        return (type(self).__name__ + "(" + str(self.width) +
+                ", " + str(self.height) + ")")
 
     def __del__(self):
         print("Bye rectangle...")
