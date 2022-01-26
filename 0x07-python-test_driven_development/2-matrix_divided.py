@@ -7,6 +7,13 @@ Returns a new matrix
 
 
 def matrix_divided(matrix, div):
+    """
+    Divides all elements in a matrix by div
+    Args:
+        matrix: matriz of int or float
+        div: divisor, int or float, > 0
+    """
+
     new_matrix = []
     msg_div = "matrix_divided() missing 1 required positional argument: 'div'"
     msg_m1 = "matrix must be a matrix (list of lists) of integers/floats"
