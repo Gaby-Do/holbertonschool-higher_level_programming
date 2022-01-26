@@ -14,9 +14,8 @@ def text_indentation(text):
 
     if type(text) is not str:
         raise TypeError("text must be a string")
-    text_update = str(text)
     after_new_line = False
-    for c in text_update:
+    for c in text:
         if after_new_line:
             if c == " ":
                 continue
