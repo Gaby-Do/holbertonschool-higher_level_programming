@@ -5,6 +5,7 @@ function that prints a text with 2 new lines
 after each of these characters: ., ? and :
 """
 
+
 def text_indentation(text):
     """
         Arg:
@@ -25,7 +26,7 @@ def text_indentation(text):
                 continue
         if flag == 1:
             if char == '.' or char == ':' or char == '?' or char == ' ':
-                continue    
+                continue
             else:
                 print(char, end="")
                 flag = 0
