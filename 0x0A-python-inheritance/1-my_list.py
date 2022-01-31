@@ -7,7 +7,7 @@ Write a class MyList that inherits from list
 
 class MyList(list):
     pass
-    
+
     def print_sorted(self):
         """prints the list, but sorted (ascending sort)"""
         aux_list = self[:]

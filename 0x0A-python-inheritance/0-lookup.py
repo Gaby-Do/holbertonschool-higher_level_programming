@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 0. Lookup
-Write a function that returns the list of available attributes and methods of an object
+Write a function that returns the list of available
+attributes and methods of an object
 """
 
 
