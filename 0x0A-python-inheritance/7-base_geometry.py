@@ -6,11 +6,13 @@ Write a class BaseGeometry (based on 5-base_geometry.py).
 
 
 class BaseGeometry:
+    """class Geometry"""
 
     def __init__(self):
         pass
 
     def area(self):
+        """area not implemented yet"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
