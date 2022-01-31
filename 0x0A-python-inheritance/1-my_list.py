@@ -6,6 +6,7 @@ Write a class MyList that inherits from list
 
 
 class MyList(list):
+    """this is class MyList"""
     pass
 
     def print_sorted(self):
