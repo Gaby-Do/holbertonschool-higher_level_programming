@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
 4. From JSON string to Object
-Write a function that returns an object (Python data structure) represented by a JSON string
+Write a function that returns an object (Python data structure)
+represented by a JSON string
 """
 
 
 import json
+
 
 def from_json_string(my_str):
     """
