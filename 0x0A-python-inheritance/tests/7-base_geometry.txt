@@ -2,6 +2,26 @@
 
 >>> bg = BaseGeometry()
 
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.integer_validator(“age”, (4,))
+Traceback (most recent call last):
+SyntaxError: invalid character in identifier
+
+>>> bg.integer_validator(“age”, [3])
+Traceback (most recent call last):
+SyntaxError: invalid character in identifier
+
+>>> bg.integer_validator(“age”, {3, 4})
+Traceback (most recent call last):
+SyntaxError: invalid character in identifier
+
+>>> bg.integer_validator(“age”, None)
+Traceback (most recent call last):
+SyntaxError: invalid character in identifier
+
 >>> bg.integer_validator("my_int", 12)
 
 >>> bg.integer_validator(True, 12)
