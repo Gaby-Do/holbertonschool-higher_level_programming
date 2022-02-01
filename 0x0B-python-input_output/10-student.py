@@ -25,7 +25,7 @@ class Student:
         aux = {}
         for key in attrs:
             if type(key) is not str:
-                return self.__dict__           
+                return self.__dict__
             if key in self.__dict__:
                 aux[key] = self.__dict__[key]
         return aux
