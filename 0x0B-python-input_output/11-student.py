@@ -39,4 +39,6 @@ class Student:
         """
             Replaces all attributes of the Student instance
         """
+        if not json:
+            return {}
         self.__dict__ = json
