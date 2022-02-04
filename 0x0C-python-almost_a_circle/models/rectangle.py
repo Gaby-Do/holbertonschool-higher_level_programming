@@ -30,8 +30,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         
-    def __str__(self):
-            return f"width: {self.width}, height: {self.heigt}, x: {self.x}, y: {self.y}"
 
     @property
     def width(self):
@@ -85,3 +83,39 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        area = self.__width * self.__height
+        return area
+
+    """
+    def display(self):
+        for h in range(self.__height):
+            for w in range(self.__width):
+                print('#', end='')
+            print()
+    """    
+    def __str__(self):
+            return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+    def display(self):
+        for x in range(self.__x):
+            print()
+        for h in range(self.__height):
+            for y in range(self.__y):
+                print(' ', end='')
+            for w in range(self.__width):
+                print('#', end='')
+            print()
+
+    def update(self, *args, **kwargs):
+        list_args = ['id', 'width', 'height', 'x', 'y']
+        if args:
+            if len(args) < 6:
+                for i in range(len(args)):
+                    setattr(self, list_args[i], args[i])
+        else:
+            if kwargs:
+                for key in kwargs:
+                    if key in list_args:
+                        setattr(self, key, kwargs[key])
+
