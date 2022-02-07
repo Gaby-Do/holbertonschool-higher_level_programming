@@ -22,6 +22,12 @@ class Test_Rectangle(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, -1, 10)
         self.assertRaises(TypeError, Rectangle, (1, 2), 10)
         self.assertRaises(TypeError, Rectangle, 'a', 10)
+        self.assertRaises(TypeError, Rectangle, [1, 2, 3], 10)
+        self.assertRaises(TypeError, Rectangle, {'a': 1, 'b': 2}, 10)
+        self.assertRaises(TypeError, Rectangle, 1.5, 10)
+        self.assertRaises(TypeError, Rectangle, 'nan', 10)
+        self.assertRaises(TypeError, Rectangle, 'inf', 10)
+        self.assertRaises(TypeError, Rectangle, 2.5, 10)
 
 # Tests for height:
 
@@ -29,7 +35,7 @@ class Test_Rectangle(unittest.TestCase):
         for h in [-1, 0]:
             with self.subTest(h=h):
                 self.assertRaises(ValueError, Rectangle, 2, h)
-        for h in ['a', 'hola', (1, 2)]:
+        for h in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
             with self.subTest(h=h):
                 self.assertRaises(TypeError, Rectangle, 2, h)
 
@@ -37,7 +43,7 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_x(self):
         self.assertRaises(ValueError, Rectangle, 2, 10, -5)
-        for x in ['a', 'hola', (1, 2)]:
+        for x in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
             with self.subTest(x=x):
                 self.assertRaises(TypeError, Rectangle, 2, 10, x)
 
@@ -45,7 +51,7 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_y(self):
         self.assertRaises(ValueError, Rectangle, 2, 10, 2, -2)
-        for y in ['a', 'hola', (1, 2)]:
+        for y in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
             with self.subTest(y=y):
                 self.assertRaises(TypeError, Rectangle, (2, 10, 0, y))
 
