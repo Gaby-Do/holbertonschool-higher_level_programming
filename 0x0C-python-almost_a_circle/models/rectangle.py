@@ -94,7 +94,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns the string representation"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) \
+{self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def display(self):
         """prints in stdout the Rectangle instance with the character #"""
