@@ -9,7 +9,7 @@ import json
 from os import path
 
 
-class Base:
+class Base():
     """
     This is my Base class
 
@@ -21,7 +21,11 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initializes the base class"""
+        """
+            Initializes the base class
+            Args:
+                id: identificator for object
+        """
         if id is not None:
             self.id = id
         else:
@@ -30,7 +34,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the JSON string representation of list_dictionaries"""
+        """Returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
