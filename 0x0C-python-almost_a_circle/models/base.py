@@ -9,7 +9,7 @@ import json
 from os import path
 
 
-class Base():
+class Base:
     """
     This is my Base class
 
