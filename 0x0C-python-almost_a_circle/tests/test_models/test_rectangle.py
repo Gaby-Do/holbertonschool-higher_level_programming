@@ -54,11 +54,16 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_area(self):
         r1 = Rectangle(1, 2)
-        self.assertEqual(Rectangle.area(r1), 2)
+        self.assertEqual(r1.area(), 2)
 
     def test_update(self):
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 10/10 - 10/10')
+        r2 = Rectangle(10, 10, 10, 10)
+        r2.update(width=1, x=2)
+        self.assertEqual(r2.__str__(), '[Rectangle] (8) 2/10 - 1/10')
+
 
 if __name__ == '__main__':
     unittest.main()
