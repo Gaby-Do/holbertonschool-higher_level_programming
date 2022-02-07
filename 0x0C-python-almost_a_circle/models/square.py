@@ -24,18 +24,22 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """returns the string representation"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {super().width}"
 
     @property
     def size(self):
+        """gets width"""
         return self.width
 
     @size.setter
     def size(self, size):
+        """sets size"""
         self.width = size
         self.height = size
 
     def update(self, *args, **kwargs):
+        """assigns a key/value argument to attributes"""
         list_args = ['id', 'size', 'x', 'y']
         if args:
             if len(args) < 5:
@@ -47,6 +51,7 @@ class Square(Rectangle):
                     setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
         sq_dict = {
                     'id': self.id,
                     'x': self.x,
