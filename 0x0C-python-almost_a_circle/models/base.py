@@ -45,7 +45,7 @@ class Base():
         with open('{}.json'.format(cls.__name__), 'w+') as my_file:
             list_aux = []
             if list_objs is None:
-                my_file.write(list_aux)
+                my_file.write(cls.to_json_strin(list_aux))
             else:
                 for item in list_objs:
                     list_aux.append(cls.to_dictionary(item))
