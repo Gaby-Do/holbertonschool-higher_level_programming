@@ -49,6 +49,7 @@ class Test_Base(unittest.TestCase):
         self.assertTrue(len(Base.save_to_file.__doc__) > 0)
         self.assertTrue(len(Base.load_from_file.__doc__) > 0)
 
+# Tests for methods
 
 
 if __name__ == '__main__':

@@ -31,12 +31,10 @@ class Test_Square(unittest.TestCase):
         for y in ['a', 'hola', (1, 2)]:
             with self.subTest(y=y):
                 self.assertRaises(TypeError, Square, 2, 2, y)
-    
+
     def test_area(self):
         s1 = Square(2)
         self.assertEqual(s1.area(), 4)
-
-
 
 
 if __name__ == '__main__':
