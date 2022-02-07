@@ -19,6 +19,18 @@ class Test_Square(unittest.TestCase):
         self.assertRaises(ValueError, Square, -2)
         self.assertRaises(TypeError, Square, (1, 2))
         self.assertRaises(TypeError, Square, 'a')
+        self.assertRaises(TypeError, Square, [1, 2, 3, 4])
+        self.assertRaises(TypeError, Square, {'a': 'hola', 'b': 1})
+        self.assertRaises(TypeError, Square, 1.5)
+        self.assertRaises(TypeError, Square, 'nan')
+        self.assertRaises(TypeError, Square, 'inf')
+        Base._Base__nb_objects = 0
+        s1 = Square(2)
+        self.assertEqual(s1.size, 2)
+
+    def test_str(self):
+        s1 = Square(2, 0, 0, 45)
+        self.assertEqual(s1.__str__(), "[Square] (45) 0/0 - 2")
 
     def test_x(self):
         self.assertRaises(ValueError, Square, 2, -5)
@@ -36,6 +48,10 @@ class Test_Square(unittest.TestCase):
         s1 = Square(2)
         self.assertEqual(s1.area(), 4)
 
+    def test_update(self):
+        s1 = Square(2, 4, 1)
+        s1.update(89)
+        self.assertEqual(s1.__str__(), '[Square] (89) 4/1 - 2')
 
 if __name__ == '__main__':
     unittest.main()
