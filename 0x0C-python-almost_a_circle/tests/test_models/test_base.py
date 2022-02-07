@@ -40,6 +40,16 @@ class Test_Base(unittest.TestCase):
         b1 = Base(0)
         self.assertEqual(b1.id, 0)
 
+    def test_documentation(self):
+        self.assertTrue(len(Base.__doc__) > 0)
+        self.assertTrue(len(Base.__doc__) > 0)
+        self.assertTrue(len(Base.to_json_string.__doc__) > 0)
+        self.assertTrue(len(Base.create.__doc__) > 0)
+        self.assertTrue(len(Base.from_json_string.__doc__) > 0)
+        self.assertTrue(len(Base.save_to_file.__doc__) > 0)
+        self.assertTrue(len(Base.load_from_file.__doc__) > 0)
+
+
 
 if __name__ == '__main__':
     unittest.main()
