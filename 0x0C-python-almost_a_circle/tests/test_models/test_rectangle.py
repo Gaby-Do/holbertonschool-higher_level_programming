@@ -12,8 +12,12 @@ from models.rectangle import Rectangle
 class Test_Rectangle(unittest.TestCase):
     """testing Rectangle"""
 
-    def test_empty(self):
+    def test_rectangle(self):
         self.assertRaises(TypeError, Rectangle, ())
+        r1 = Rectangle(1, 2)
+        self.assertEqual(r1.id, 19)
+        r2 = Rectangle(1, 2, 3)
+        self.assertEqual(r2.id, 20)
 
 # Tests for width:
 
