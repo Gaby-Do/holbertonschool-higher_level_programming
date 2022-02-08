@@ -90,7 +90,7 @@ class Test_Base(unittest.TestCase):
             my_list = Base.from_json_string(read)
             self.assertDictEqual(s2.to_dictionary(), my_list[0])
 
-    def test_from_json_string(self):
+    def test_from_json_string_r(self):
         list_input = [
             {'id': 89, 'width': 10, 'height': 4}, 
             {'id': 7, 'width': 1, 'height': 7}
@@ -100,7 +100,17 @@ class Test_Base(unittest.TestCase):
         self.assertTrue(type(json_list_input) is str)
         self.assertTrue(type(list_output) is list)
 
-    def test_load_from_file(self):
+    def test_from_json_string_s(self):
+        list_input = [
+            {'id': 89, 'width': 10}, 
+            {'id': 7, 'width': 1}
+        ]
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        self.assertTrue(type(json_list_input) is str)
+        self.assertTrue(type(list_output) is list)
+
+    def test_load_from_file_r(self):
         r1 = Rectangle(10, 7, 2, 8, 89)
         r2 = Rectangle(2, 4, 0, 0, 90)
         list_rectangles_input = [r1, r2]
