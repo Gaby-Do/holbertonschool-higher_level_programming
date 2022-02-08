@@ -83,6 +83,13 @@ class Test_Base(unittest.TestCase):
             my_list = Base.from_json_string(read)
             self.assertDictEqual(r1.to_dictionary(), my_list[0])
 
+        r2 = Rectangle(10, 7)
+        Rectangle.save_to_file([r2])
+        with open("Rectangle.json", "r") as my_file:
+            read = my_file.read()
+            my_list = Base.from_json_string(read)
+            self.assertDictEqual(r2.to_dictionary(), my_list[0])
+
     def test_from_json_string(self):
         list_input = [
             {'id': 89, 'width': 10, 'height': 4}, 
@@ -107,8 +114,6 @@ class Test_Base(unittest.TestCase):
                                     "[Rectangle] (90) 0/0 - 2/4")
         self.assertEqual(list_rectangles_output[1].__str__(),
                                     "[Rectangle] (90) 0/0 - 2/4")
-                        
-
 
 
 
