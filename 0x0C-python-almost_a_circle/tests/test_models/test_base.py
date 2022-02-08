@@ -13,7 +13,7 @@ from models.rectangle import Rectangle
 class Test_Base(unittest.TestCase):
     """test Base id"""
 
-    def test_no_id(self):
+    def test_a_no_id(self):
         b1 = Base()
         self.assertEqual(b1.id, 1)
 
@@ -21,7 +21,7 @@ class Test_Base(unittest.TestCase):
         b1 = Base(12)
         self.assertEqual(b1.id, 12)
 
-    def test_no_id_2(self):
+    def test_a_no_id_2(self):
         b1 = Base()
         self.assertEqual(b1.id, 2)
 
@@ -29,7 +29,7 @@ class Test_Base(unittest.TestCase):
         b1 = Base('hola')
         self.assertEqual(b1.id, 'hola')
 
-    def test_none_id(self):
+    def test_a_none_id(self):
         b1 = Base(None)
         self.assertEqual(b1.id, 3)
 
@@ -84,14 +84,22 @@ class Test_Base(unittest.TestCase):
         self.assertTrue(type(json_list_input) is str)
         self.assertTrue(type(list_output) is list)
 
-    def load_from_file(self):
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
+    def test_load_from_file(self):
+        r1 = Rectangle(10, 7, 2, 8, 89)
+        r2 = Rectangle(2, 4, 0, 0, 90)
         list_rectangles_input = [r1, r2]
         Rectangle.save_to_file(list_rectangles_input)
         list_rectangles_output = Rectangle.load_from_file()
-        for rect in list_rectangles_input:
-            self.assertTrue(type(rect) is list)
+        self.assertEqual(list_rectangles_input[0].__str__(),
+                                    "[Rectangle] (89) 2/8 - 10/7")
+        self.assertEqual(list_rectangles_output[0].__str__(),
+                                    "[Rectangle] (89) 2/8 - 10/7")
+        self.assertEqual(list_rectangles_input[1].__str__(),
+                                    "[Rectangle] (90) 0/0 - 2/4")
+        self.assertEqual(list_rectangles_output[1].__str__(),
+                                    "[Rectangle] (90) 0/0 - 2/4")
+                        
+
 
 
 
