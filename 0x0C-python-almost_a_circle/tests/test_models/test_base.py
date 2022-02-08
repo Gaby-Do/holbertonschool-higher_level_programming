@@ -9,6 +9,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+from os import path
 
 
 class Test_Base(unittest.TestCase):
@@ -78,10 +79,7 @@ class Test_Base(unittest.TestCase):
     def test_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8)
         Rectangle.save_to_file([r1])
-        with open("Rectangle.json", "r") as my_file:
-            read = my_file.read()
-            my_list = Base.from_json_string(read)
-            self.assertDictEqual(r1.to_dictionary(), my_list[0])
+        self.assertTrue(path.isfile('Rectangle.json'))
 
         s2 = Square(2)
         Square.save_to_file([s2])
