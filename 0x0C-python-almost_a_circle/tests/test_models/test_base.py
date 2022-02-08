@@ -8,6 +8,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class Test_Base(unittest.TestCase):
@@ -50,12 +51,20 @@ class Test_Base(unittest.TestCase):
         self.assertTrue(len(Base.save_to_file.__doc__) > 0)
         self.assertTrue(len(Base.load_from_file.__doc__) > 0)
 
-    def test_z_create(self):
+    def test_z_create_r(self):
         r1 = Rectangle(3, 5, 1)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
         self.assertFalse(r1 is r2)
         self.assertDictEqual(r1_dictionary, r2.to_dictionary())
+
+    def test_z_create_s(self):
+        s1 = Square(3, 5, 1)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertFalse(s1 is s2)
+        self.assertDictEqual(s1_dictionary, s2.to_dictionary())
+
 
 # Tests for json
 
