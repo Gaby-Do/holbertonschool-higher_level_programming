@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
-3. SQL Injection...
+4. Cities by states
 Connects to database,
-takes in the name of a state as an argument and lists all cities of that state,
-safe from MySQL injections!
+lists all cities from the database hbtn_0e_4_usa
 """
+
 
 import MySQLdb
 from sys import argv
-
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
@@ -19,9 +18,9 @@ if __name__ == "__main__":
             db=argv[3])
     cur = db.cursor()
     cur.execute(
-            "SELECT * FROM states\
-            WHERE name=%s\
-            ORDER BY id ASC", (argv[4],))
+            "SELECT cities.id, cities.name, states.name FROM cities\
+            JOIN states ON cities.state_id = states.id\
+            ORDER BY cities.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
