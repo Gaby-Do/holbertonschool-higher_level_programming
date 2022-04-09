@@ -23,6 +23,6 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     state = session.query(State).filter(State.id == 2)\
-        .update({State.name: "New mexico"})
+        .update({State.name: "New Mexico"})
     session.commit()
     session.close()
