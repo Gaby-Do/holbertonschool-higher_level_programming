@@ -1,17 +1,17 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """
-Python script that takes in a URL and an email, sends a POST request to the passed URL
-with the email as a parameter, and displays the body of the response (decoded in utf-8)
+Python script that takes in a URL and an email,
+sends a POST request to the passed URL with the email as a parameter,
+and displays the body of the response (decoded in utf-8)
 - use the packages urllib and sys
+- email must be sent in the email variable
 - use the with statement
-- email sent in the email variable
 """
 
 
+from sys import argv
 import urllib.request
 import urllib.parse
-from sys import argv
-
 
 if __name__ == "__main__":
     email = argv[2]
